@@ -4,9 +4,7 @@ import Item from './comps/Item';
 import Chart from './comps/Chart';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
 
 class App extends React.Component{
   state = {
@@ -33,13 +31,13 @@ class App extends React.Component{
   finishedElement = (index) => {
     const list = this.state.data;
     this.setState({ finishedData: [...this.state.finishedData ,list.splice(index, 1)] });
-    this.setState({ data: list, numberOfFinishedActivities: this.state.numberOfFinishedActivities+=1 });
+    this.setState({ data: list, numberOfFinishedActivities: this.state.numberOfFinishedActivities + 1 });
   }
   inputChange = (e) => {
     this.setState({ input: e.target.value });
   }
   addNewItem = () => {
-    this.setState({ data: [...this.state.data, this.state.input], input: '', numberOfAllActivities: this.state.numberOfAllActivities+=1});
+    this.setState({ data: [...this.state.data, this.state.input], input: '', numberOfAllActivities: this.state.numberOfAllActivities + 1});
   }
   render(){
     return (
