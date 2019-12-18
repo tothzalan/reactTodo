@@ -37,7 +37,8 @@ class App extends React.Component{
     this.setState({ input: e.target.value });
   }
   addNewItem = () => {
-    this.setState({ data: [...this.state.data, this.state.input], input: '', numberOfAllActivities: this.state.numberOfAllActivities + 1});
+    if(this.state.input.length > 2)
+      this.setState({ data: [...this.state.data, this.state.input], input: '', numberOfAllActivities: this.state.numberOfAllActivities + 1});
   }
   render(){
     return (
